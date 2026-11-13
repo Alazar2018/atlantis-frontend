@@ -1,0 +1,55 @@
+#!/bin/bash
+
+# rsync-exclude.txt - File for rsync --exclude-from option
+# Use with: rsync -avz --exclude-from=rsync-exclude.txt ...
+
+# Dependencies (will be installed on server)
+node_modules/
+
+# Build outputs (will be generated on server)
+.next/
+out/
+build/
+
+# Environment files (create .env.production on server)
+.env
+.env.local
+.env.development
+
+# Git (only if not using git on server)
+.git/
+.gitignore
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# System files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE files
+.vscode/
+.idea/
+*.code-workspace
+
+# TypeScript build info
+*.tsbuildinfo
+
+# Vercel (if used)
+.vercel/
+
+# Test coverage
+coverage/
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
